@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script data test</title>
+    <META HTTP-EQUIV='Content-Security-Policy' CONTENT="default-src 'self' ; script-src 'self' html-javascript-data-flow-website.vercel.app; connect-src 'self' html-javascript-data-flow-website.vercel.app">
+</head>
+<body>
+    <p>enter a value in teh text box and when it looses focus it calls the api and returns your text reversed.</p>
+    <form>
+        <input id="postcode" type="text" placeholder="enter postcode">
+    </form>
+    <p id="returnValue">The return value will appear here.</p>
+    <script src="https://html-javascript-data-flow-website.vercel.app/demo.js"></script>
+</body>
+</html>
