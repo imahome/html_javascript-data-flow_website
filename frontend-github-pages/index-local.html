@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Script data test</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' ; script-src 'self' html-javascript-data-flow-website.vercel.app; connect-src 'self' html-javascript-data-flow-website.vercel.app"
+    />
+  </head>
+  <body>
+    <p>
+      enter a value in teh text box and when it looses focus it calls the api
+      and returns your text reversed.
+    </p>
+    <form>
+      <input id="postcode" type="text" placeholder="enter postcode" />
+    </form>
+    <p id="returnValue">The return value will appear here.</p>
+    <script>
+      (function () {
+        const postcodeElement = document.getElementById(`postcode`);
+        const returnValueElement = document.getElementById(`returnValue`);
+
+        if (typeof postcodeElement !== `undefined`) {
+          postcodeElement.addEventListener("focusout", (event) => {
+            getApiResponse({
+              postcode: event.target.value,
+              returnValueElement,
+            });
+          });
+        }
+      })();
+
+      const getApiResponse = ({ postcode, returnValueElement }) => {
+        const bodyFormatted = JSON.stringify({ postcode });
+        console.log(bodyFormatted);
+        fetch("https://html-javascript-data-flow-website.vercel.app/api/demo", {
+          method: "POST",
+          headers: new Headers({ "content-type": "text/plain" }),
+          body: bodyFormatted,
+        })
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            returnValueElement.innerHTML = json;
+          });
+      };
+    </script>
+  </body>
+</html>
