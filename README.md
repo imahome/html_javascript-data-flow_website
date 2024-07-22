@@ -1,6 +1,6 @@
 # loading scripts and using api's demo
 
-This is a demo to load a script (vercel) on to a page (github pages) from another domain. That script (vercel) watch's for a change on a form field on the page (github pages). When this happens it post's off the value from the field to the api (vercel), which is on the same domain as the script (vercel). When the return value comes back it is displayed on the page (goithub pages) that loaded the script.
+This is a demo to load a script (vercel) on to a page (github pages) from another domain. That script (vercel) watch's for a change on a form field on the page (github pages). When this happens it post's off the value from the field to the api (vercel), which is on the same domain as the script (vercel). When the return value comes back it is displayed on the page (github pages) that loaded the script.
 
 ## vercel
 
