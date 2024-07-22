@@ -31,6 +31,6 @@ const getApiResponse = ( { postcode, returnValueElement } ) => {
         .then( ( response ) => response.json() )
         .then( ( json ) => {
             console.log( json );
-            returnValueElement.innerHTML = json;
+            returnValueElement.innerHTML = JSON.stringify(json, null, 4);
         });
 }
