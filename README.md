@@ -16,6 +16,10 @@ The page that loads the script that uses the api is
 
 https://imahome.github.io/html_javascript-data-flow_website/
 
+Script on the html page
+
+https://imahome.github.io/html_javascript-data-flow_website/index-local.html
+
 ### diagram
 
 ![setup diagram](docs/setup.drawio.png)
